@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOI & MOI - Valentin Mouville</title>
+    <!-- Oswald Font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Dual Background Layers for Smooth Cross-fading -->
+    <div id="bg-layer-1" class="bg-layer"></div>
+    <div id="bg-layer-2" class="bg-layer"></div>
+
+    <div class="vignette"></div>
+
+    <div id="content-overlay">
+        <h1 class="title">TOI</h1>
+        <h2 class="artist">Valentin Mouville</h2>
+        <p class="release-date">14/02/2025</p>
+        <button class="preorder-btn">PRÉCOMMANDE</button>
+    </div>
+
+    <!-- Loading Bar Slider -->
+    <div id="loading-container">
+        <!-- The background track -->
+        <div id="loading-bar">
+            <!-- The tracked fill -->
+            <div id="loading-fill"></div>
+        </div>
+        <!-- The dragged handle (Disco Ball) -->
+        <div id="slider-handle"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
