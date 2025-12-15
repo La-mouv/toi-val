@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'pictures/2.png',
         'pictures/3.png',
         'pictures/4.png',
-        'pictures/5.png',
         'pictures/6.png',
-        'pictures/7.jpg',
-        'pictures/8.jpg'
+        'pictures/7.jpg'
     ];
 
     const sliderHandle = document.getElementById('slider-handle');
