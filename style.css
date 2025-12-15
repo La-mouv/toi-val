@@ -172,12 +172,13 @@ html {
     top: 50%;
     left: 0%;
     /* Will be updated via JS */
-    width: 100px;
-    /* Increased from 60px */
-    height: 100px;
-    /* Increased from 60px */
+    width: 75px;
+    /* Reduced from 100px */
+    height: 75px;
+    /* Reduced from 100px */
     background-image: url('disco_ball.png');
-    background-size: contain;
+    background-size: 130%;
+    /* Zoom in to fill container */
     background-repeat: no-repeat;
     background-position: center;
     transform: translate(-50%, -50%);
