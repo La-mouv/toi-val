@@ -5,21 +5,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingFill = document.getElementById('loading-fill');
 
     // Image configuration
+    const loadingOverlay = document.getElementById('loading-overlay');
+
+    // Image configuration
     const images = [
         'pictures/1.jpeg',
-        'pictures/2.png',
-        'pictures/3.png',
-        'pictures/4.png',
-        'pictures/6.png',
+        'pictures/2.jpg',
+        'pictures/3.jpg',
+        'pictures/4.jpg',
+        'pictures/6.jpg',
         'pictures/7.jpg'
     ];
 
     const sliderHandle = document.getElementById('slider-handle');
 
     // Preload images
+    let loadedCount = 0;
+    const totalImages = images.length;
+
+    function checkLoad() {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+            loadingOverlay.classList.add('hidden');
+        }
+    }
+
     images.forEach(src => {
-        new Image().src = src;
+        const img = new Image();
+        img.src = src;
+        img.onload = checkLoad;
+        img.onerror = checkLoad; // Hide anyway if error
     });
+
+    // Fallback: hide loader after 5 seconds even if images stick
+    setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+    }, 5000);
 
     const maxProgress = images.length - 1;
     let isDragging = false;
