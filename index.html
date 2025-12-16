@@ -30,9 +30,32 @@
     <div id="content-overlay">
         <h1 class="title">TOI</h1>
         <h2 class="artist">Valentin Mouville</h2>
-        <p class="release-date">14/02/2025</p>
+
+        <!-- Audio Teaser -->
+        <audio id="teaser-audio" src="teaser.m4a" loop></audio>
+        <button id="play-btn" class="teaser-btn">
+            <span class="icon">▶</span> EXTRAIT (15s)
+        </button>
+
+        <div id="countdown" class="countdown">
+            <div class="time-block"><span id="days">00</span><span class="label">J</span></div>
+            <span class="sep">:</span>
+            <div class="time-block"><span id="hours">00</span><span class="label">H</span></div>
+            <span class="sep">:</span>
+            <div class="time-block"><span id="minutes">00</span><span class="label">M</span></div>
+            <span class="sep">:</span>
+            <div class="time-block"><span id="seconds">00</span><span class="label">S</span></div>
+        </div>
+
         <button class="preorder-btn">PRÉCOMMANDE</button>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">INSTAGRAM</a>
+            <a href="https://www.tiktok.com" target="_blank" class="social-icon">TIKTOK</a>
+        </div>
     </div>
+
+    <!-- Sound Toggle Removed -->
 
     <!-- Loading Bar Slider -->
     <div id="loading-container">

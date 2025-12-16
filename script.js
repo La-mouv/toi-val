@@ -143,3 +143,52 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// --- Audio Teaser Logic ---
+const audio = document.getElementById('teaser-audio');
+const playBtn = document.getElementById('play-btn');
+const iconSpan = playBtn.querySelector('.icon');
+
+playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playBtn.classList.add('playing');
+        iconSpan.textContent = '❚❚'; // Pause symbol
+    } else {
+        audio.pause();
+        playBtn.classList.remove('playing');
+        iconSpan.textContent = '▶'; // Play symbol
+    }
+});
+
+audio.addEventListener('ended', () => {
+    playBtn.classList.remove('playing');
+    iconSpan.textContent = '▶';
+});
+
+
+// --- Countdown Logic ---
+const countdownDate = new Date('January 9, 2026 00:00:00').getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    if (distance < 0) {
+        document.getElementById('countdown').innerHTML = "DISPONIBLE MAINTENANT";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+    document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+    document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+    document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown(); // Initial call
